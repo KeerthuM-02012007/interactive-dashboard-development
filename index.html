@@ -22,6 +22,22 @@
             </div>
         </header>
 
+        <!-- Filter Section -->
+        <section class="filter-row">
+            <div class="filter-card">
+                <label for="regionFilter">Region</label>
+                <select id="regionFilter" class="filter-select" data-filter="region"></select>
+            </div>
+            <div class="filter-card">
+                <label for="monthFilter">Month</label>
+                <select id="monthFilter" class="filter-select" data-filter="month"></select>
+            </div>
+            <div class="filter-card">
+                <label for="categoryFilter">Category</label>
+                <select id="categoryFilter" class="filter-select" data-filter="category"></select>
+            </div>
+        </section>
+
         <!-- KPI Cards Section -->
         <section class="kpi-section">
             <div class="kpi-card">
@@ -106,16 +122,21 @@
         <!-- Key Insights & Recommendations Section -->
         <section class="insights-section">
             <div class="insights-card">
-                <h3>📌 Key Insights</h3>
+                <h3>📌 KEY INSIGHTS</h3>
                 <ul class="insights-list" id="keyInsights">
-                    <li>Loading insights...</li>
+                    <li>Revenue increased 18% in Q2.</li>
+                    <li>Product A generated 35% of total sales.</li>
+                    <li>South region performed best.</li>
+                    <li>April recorded highest monthly growth.</li>
                 </ul>
             </div>
 
             <div class="insights-card">
-                <h3>💡 Recommendations</h3>
+                <h3>💡 RECOMMENDATIONS</h3>
                 <ul class="insights-list" id="recommendations">
-                    <li>Loading recommendations...</li>
+                    <li>Increase inventory for Product A.</li>
+                    <li>Focus marketing on South region.</li>
+                    <li>Improve sales strategy in West region.</li>
                 </ul>
             </div>
         </section>
