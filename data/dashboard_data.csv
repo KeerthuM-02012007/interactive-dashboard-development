@@ -1,0 +1,10 @@
+date,category,value,metric
+2024-01-01,Sales,1500,Units
+2024-01-02,Sales,1650,Units
+2024-01-03,Sales,1800,Units
+2024-01-04,Revenue,45000,USD
+2024-01-05,Revenue,48500,USD
+2024-01-06,Revenue,52000,USD
+2024-01-07,Users,250,Count
+2024-01-08,Users,280,Count
+2024-01-09,Users,310,Count
