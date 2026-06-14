@@ -118,7 +118,7 @@ function createRevenueTrendChart() {
     });
 }
 
-// ===== TOP PRODUCTS CHART (Bar) =====
+// ===== TOP PRODUCTS CHART (Horizontal Bar) =====
 function createTopProductsChart() {
     const products = [
         { name: 'Product A', sales: 8500 },
@@ -136,13 +136,7 @@ function createTopProductsChart() {
             datasets: [{
                 label: 'Sales Amount',
                 data: products.map(p => p.sales),
-                backgroundColor: [
-                    colors.success,
-                    colors.info,
-                    colors.warning,
-                    colors.secondary,
-                    colors.danger
-                ],
+                backgroundColor: colors.primary,
                 borderRadius: 6,
             }]
         },
@@ -151,7 +145,7 @@ function createTopProductsChart() {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-                legend: { display: true, labels: { font: { size: 11, weight: 'bold' } } }
+                legend: { display: false }
             },
             scales: {
                 x: {
@@ -165,13 +159,13 @@ function createTopProductsChart() {
     });
 }
 
-// ===== REGION PERFORMANCE CHART (Horizontal Bar) =====
+// ===== SALES BY REGION CHART (Bar) =====
 function createRegionChart() {
     const regions = [
-        { name: 'North America', performance: 45 },
-        { name: 'Europe', performance: 38 },
-        { name: 'Asia Pacific', performance: 32 },
-        { name: 'Latin America', performance: 28 }
+        { name: 'North America', sales: 45000 },
+        { name: 'Europe', sales: 38000 },
+        { name: 'Asia Pacific', sales: 32000 },
+        { name: 'Latin America', sales: 28000 }
     ];
 
     const ctx = document.getElementById('regionChart').getContext('2d');
@@ -180,33 +174,31 @@ function createRegionChart() {
         data: {
             labels: regions.map(r => r.name),
             datasets: [{
-                label: 'Performance Score',
-                data: regions.map(r => r.performance),
-                backgroundColor: colors.info,
+                label: 'Sales by Region',
+                data: regions.map(r => r.sales),
+                backgroundColor: colors.primary,
                 borderRadius: 6,
             }]
         },
         options: {
-            indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-                legend: { display: true, labels: { font: { size: 11, weight: 'bold' } } }
+                legend: { display: false }
             },
             scales: {
-                x: {
+                y: {
                     beginAtZero: true,
-                    max: 50,
-                    ticks: { color: '#666' },
+                    ticks: { color: '#666', callback: (v) => '$' + v.toLocaleString() },
                     grid: { color: 'rgba(0, 0, 0, 0.05)' }
                 },
-                y: { ticks: { color: '#666' }, grid: { drawBorder: false } }
+                x: { ticks: { color: '#666' }, grid: { drawBorder: false } }
             }
         }
     });
 }
 
-// ===== CATEGORY SPLIT CHART (Pie) =====
+// ===== CATEGORY DISTRIBUTION CHART (Pie) =====
 function createCategorySplitChart() {
     const categories = [
         { name: 'Electronics', value: 35 },
@@ -218,17 +210,17 @@ function createCategorySplitChart() {
 
     const ctx = document.getElementById('categorySplitChart').getContext('2d');
     charts.categorySplit = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
             labels: categories.map(c => c.name),
             datasets: [{
                 data: categories.map(c => c.value),
                 backgroundColor: [
-                    colors.success,
+                    colors.primary,
                     colors.info,
                     colors.warning,
-                    colors.secondary,
-                    colors.danger
+                    colors.success,
+                    colors.secondary
                 ],
                 borderColor: '#fff',
                 borderWidth: 2,
@@ -247,7 +239,7 @@ function createCategorySplitChart() {
     });
 }
 
-// ===== MONTHLY GROWTH CHART (Area) =====
+// ===== GROWTH RATE CHART (Line) =====
 function createMonthlyGrowthChart() {
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
     const growth = [12, 19, 15, 25, 22, 30];
@@ -258,14 +250,14 @@ function createMonthlyGrowthChart() {
         data: {
             labels: months,
             datasets: [{
-                label: 'Monthly Growth %',
+                label: 'Growth Rate %',
                 data: growth,
-                borderColor: colors.warning,
-                backgroundColor: colors.warning + '20',
-                borderWidth: 2,
+                borderColor: colors.primary,
+                backgroundColor: colors.primary + '15',
+                borderWidth: 3,
                 fill: true,
-                tension: 0.4,
-                pointBackgroundColor: colors.warning,
+                tension: 0.35,
+                pointBackgroundColor: colors.primary,
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
                 pointRadius: 5,
