@@ -3,56 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Dashboard</title>
+    <title>Business Performance Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>📊 Interactive Dashboard</h1>
-            <p class="subtitle">Real-time Data Visualization & Analytics</p>
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>📊 Business Performance Dashboard</h1>
+                <p class="subtitle">Real-time Analytics & Insights</p>
+            </div>
+            <div class="header-meta">
+                <span class="last-updated">Last Updated: <span id="updateTime">--</span></span>
+            </div>
         </header>
-        
-        <nav class="filters">
-            <button class="filter-btn active" data-filter="all">All Metrics</button>
-            <button class="filter-btn" data-filter="sales">Sales</button>
-            <button class="filter-btn" data-filter="revenue">Revenue</button>
-            <button class="filter-btn" data-filter="users">Users</button>
-        </nav>
 
-        <main id="dashboard" class="dashboard-grid">
-            <!-- Sales Chart -->
-            <div class="chart-card">
-                <h3>Sales Trend</h3>
-                <canvas id="salesChart"></canvas>
+        <!-- KPI Cards Section -->
+        <section class="kpi-section">
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h4>Revenue</h4>
+                    <span class="kpi-icon">💰</span>
+                </div>
+                <p class="kpi-value" id="kpiRevenue">$0</p>
+                <p class="kpi-change positive">↑ 12.5% from last period</p>
             </div>
 
-            <!-- Revenue Chart -->
-            <div class="chart-card">
-                <h3>Revenue Overview</h3>
-                <canvas id="revenueChart"></canvas>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h4>Profit</h4>
+                    <span class="kpi-icon">📈</span>
+                </div>
+                <p class="kpi-value" id="kpiProfit">$0</p>
+                <p class="kpi-change positive">↑ 8.3% from last period</p>
             </div>
 
-            <!-- Users Growth -->
-            <div class="chart-card">
-                <h3>User Growth</h3>
-                <canvas id="usersChart"></canvas>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h4>Orders</h4>
+                    <span class="kpi-icon">📦</span>
+                </div>
+                <p class="kpi-value" id="kpiOrders">0</p>
+                <p class="kpi-change positive">↑ 5.2% from last period</p>
             </div>
 
-            <!-- Combined Metrics -->
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h4>Customers</h4>
+                    <span class="kpi-icon">👥</span>
+                </div>
+                <p class="kpi-value" id="kpiCustomers">0</p>
+                <p class="kpi-change positive">↑ 15.8% from last period</p>
+            </div>
+        </section>
+
+        <hr class="dashboard-divider">
+
+        <!-- Revenue Trend Section -->
+        <section class="chart-section full-width">
             <div class="chart-card full-width">
-                <h3>All Metrics Overview</h3>
-                <canvas id="combinedChart"></canvas>
+                <h3>Revenue Trend</h3>
+                <canvas id="revenueTrendChart"></canvas>
             </div>
-        </main>
+        </section>
 
+        <hr class="dashboard-divider">
+
+        <!-- Two Column Section: Top Products & Region Performance -->
+        <section class="chart-section two-column">
+            <div class="chart-card">
+                <h3>Top Products</h3>
+                <canvas id="topProductsChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Region Performance</h3>
+                <canvas id="regionChart"></canvas>
+            </div>
+        </section>
+
+        <hr class="dashboard-divider">
+
+        <!-- Two Column Section: Category Split & Monthly Growth -->
+        <section class="chart-section two-column">
+            <div class="chart-card">
+                <h3>Category Split</h3>
+                <canvas id="categorySplitChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Monthly Growth</h3>
+                <canvas id="monthlyGrowthChart"></canvas>
+            </div>
+        </section>
+
+        <hr class="dashboard-divider">
+
+        <!-- Key Insights & Recommendations Section -->
+        <section class="insights-section">
+            <div class="insights-card">
+                <h3>📌 Key Insights</h3>
+                <ul class="insights-list" id="keyInsights">
+                    <li>Loading insights...</li>
+                </ul>
+            </div>
+
+            <div class="insights-card">
+                <h3>💡 Recommendations</h3>
+                <ul class="insights-list" id="recommendations">
+                    <li>Loading recommendations...</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="dashboard-divider">
+
+        <!-- Footer -->
         <footer class="dashboard-footer">
-            <p>Last Updated: <span id="updateTime">--</span></p>
-            <p>Data Source: dashboard_data.csv</p>
+            <p>Data Source: dashboard_data.csv | Dashboard v2.0</p>
         </footer>
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
