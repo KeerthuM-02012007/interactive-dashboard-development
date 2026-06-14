@@ -94,7 +94,7 @@ date,category,value,metric
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/KeerthuM-02012007/interactive-dashboard-development.git
+git clone https://github.com/keerthum-02012007/interactive-dashboard-development.git
 cd interactive-dashboard-development
 
 # Open in browser
@@ -106,7 +106,7 @@ start index.html  # Windows
 ### Deploy to GitHub Pages
 1. Enable GitHub Pages in repository settings
 2. Select `main` branch as source
-3. Dashboard will be live at: `https://KeerthuM-02012007.github.io/interactive-dashboard-development/`
+3. Dashboard will be live at: `https://keerthum-02012007.github.io/interactive-dashboard-development/`
 
 ## 📊 Using the Dashboard
 
@@ -163,7 +163,7 @@ Contributions are welcome! To contribute:
 
 ## 📧 Support
 
-For issues or questions, please open an [GitHub Issue](https://github.com/KeerthuM-02012007/interactive-dashboard-development/issues).
+For issues or questions, please open an [GitHub Issue](https://github.com/keerthum-02012007/interactive-dashboard-development/issues).
 
 ## 🙏 Acknowledgments
 
