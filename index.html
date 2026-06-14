@@ -5,16 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Interactive Dashboard</h1>
+            <h1>📊 Interactive Dashboard</h1>
+            <p class="subtitle">Real-time Data Visualization & Analytics</p>
         </header>
-        <main id="dashboard">
-            <!-- Dashboard content will be rendered here -->
+        
+        <nav class="filters">
+            <button class="filter-btn active" data-filter="all">All Metrics</button>
+            <button class="filter-btn" data-filter="sales">Sales</button>
+            <button class="filter-btn" data-filter="revenue">Revenue</button>
+            <button class="filter-btn" data-filter="users">Users</button>
+        </nav>
+
+        <main id="dashboard" class="dashboard-grid">
+            <!-- Sales Chart -->
+            <div class="chart-card">
+                <h3>Sales Trend</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <!-- Revenue Chart -->
+            <div class="chart-card">
+                <h3>Revenue Overview</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+
+            <!-- Users Growth -->
+            <div class="chart-card">
+                <h3>User Growth</h3>
+                <canvas id="usersChart"></canvas>
+            </div>
+
+            <!-- Combined Metrics -->
+            <div class="chart-card full-width">
+                <h3>All Metrics Overview</h3>
+                <canvas id="combinedChart"></canvas>
+            </div>
         </main>
+
+        <footer class="dashboard-footer">
+            <p>Last Updated: <span id="updateTime">--</span></p>
+            <p>Data Source: dashboard_data.csv</p>
+        </footer>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
